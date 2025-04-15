@@ -1,0 +1,21 @@
+{
+  "name": "alatpay",
+  "version": "1.0.0",
+  "description": "React-sdk for alatpay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoyOffiong/alatpay_react_sdk-npm-package.git"
+  },
+  "keywords": [
+    "react-sdk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.1.0"
+  }
+}
