@@ -2,9 +2,14 @@
   "name": "alatpay",
   "version": "1.0.0",
   "description": "React-sdk for alatpay",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -15,7 +20,10 @@
   ],
   "author": "",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
   "dependencies": {
-    "react": "^19.1.0"
+    "alatpay": "file:"
   }
 }
