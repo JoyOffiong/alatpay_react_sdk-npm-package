@@ -2,8 +2,8 @@
   "name": "alatpay",
   "version": "3.0.0",
   "description": "React-sdk for alatpay",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/useALATPay.js",
+  "types": "dist/useALATPay.d.ts",
   "files": [
     "dist"
   ],
