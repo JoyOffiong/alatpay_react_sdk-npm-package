@@ -8,11 +8,14 @@ type props= {
   firstName: string 
   lastName: string
   metadata: string 
- phone: string
+ phone: string,
+ onTransaction:()=>void,
+ onClose: ()=>void
+ 
 }
 
 function UseALATPay({
-  amount, apiKey,businessId,currency,email,firstName,lastName,metadata, phone}:props) {
+  amount, apiKey,businessId,currency,email,firstName,lastName,metadata, phone, onTransaction, onClose}:props) {
 
     
     const submit = (formData: any) => {
@@ -40,12 +43,8 @@ function UseALATPay({
         amount,
         currency,
         metadata,
-        onTransaction: function (response: any) {
-          console.log("Transaction successful: ", response);
-        },
-        onClose: function () {
-          console.log("Payment gateway is closed.");
-        },
+        onTransaction,
+        onClose
       };
     
       const newPopup = (window as any).Alatpay.setup(config);
