@@ -9,8 +9,8 @@ type props= {
   lastName: string
   metadata: string 
  phone: string,
- onTransaction:()=>void,
- onClose: ()=>void
+ onTransaction:any,
+ onClose: any
  
 }
 
