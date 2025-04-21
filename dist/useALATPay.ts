@@ -41,10 +41,10 @@ type props= {
           currency,
           metadata,
           onTransaction: function (response: any) {
-            console.log("Transaction successful: ", response);
+            return response;
           },
           onClose: function () {
-            console.log("Payment gateway is closed.");
+            
           },
         };
       

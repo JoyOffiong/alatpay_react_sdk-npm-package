@@ -1,6 +1,6 @@
 {
   "name": "alatpay",
-  "version": "7.2.0",
+  "version": "7.3.0",
   "description": "React-sdk for alatpay",
   "main": "dist/useALATPay.mjs",
   "types": "dist/useALATPay.d.ts",

@@ -22,10 +22,10 @@ function UseALATPay({ amount, apiKey, businessId, currency, email, firstName, la
             currency,
             metadata,
             onTransaction: function (response) {
-                console.log("Transaction successful: ", response);
+                return response
             },
             onClose: function () {
-                console.log("Payment gateway is closed.");
+              
             },
         };
         const newPopup = window.Alatpay.setup(config);
