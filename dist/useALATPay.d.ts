@@ -8,8 +8,8 @@ type props = {
     lastName: string;
     metadata: string;
     phone: string;
-    onTransaction: () => void;
-    onClose: () => void;
+    onTransaction:any;
+    onClose: any;
 };
 declare function UseALATPay({ amount, apiKey, businessId, currency, email, firstName, lastName, metadata, phone, onTransaction, onClose }: props): {
     submit: (formData: any) => void;
