@@ -1,6 +1,4 @@
-"use client"
 
-import React, { useEffect, useState } from 'react'
 type props= {
   amount: number
   apiKey: string 
@@ -16,29 +14,18 @@ type props= {
 function UseALATPay({
   amount, apiKey,businessId,currency,email,firstName,lastName,metadata, phone}:props) {
 
-    const [alatPayInitialized, setAlatPayInitialized] = useState(false);
-
-    useEffect(() => {
-      if (alatPayInitialized) {
+    
+    const submit = (formData: any) => {
+      if (!(window as any).Alatpay) {
         const script = document.createElement("script");
         script.src = "https://web.alatpay.ng/js/alatpay.js";
         script.async = true;
-    
-        script.onload = () => {
-          setAlatPayInitialized(false);
-        };
     
         script.onerror = () => {
           console.error("Failed to load AlatPay script.");
         };
     
         document.body.appendChild(script);
-      }
-    }, [alatPayInitialized]);
-    
-    const submit = (formData: any) => {
-      if (!(window as any).Alatpay) {
-        setAlatPayInitialized(true);
     setTimeout(() => {  submit(formData) }, 1000);
         return;
       }
