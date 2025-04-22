@@ -29,7 +29,7 @@ function UseALATPay({
         };
     
         document.body.appendChild(script);
-    setTimeout(() => {  submit(formData) }, 1000);
+         setTimeout(() => {  submit(formData) }, 1000);
         return;
       }
     
@@ -43,8 +43,12 @@ function UseALATPay({
         amount,
         currency,
         metadata,
-        onTransaction,
-        onClose
+        onTransaction: function (response: any) {
+          return response
+      },
+      onClose: function () {
+        
+      },
       };
     
       const newPopup = (window as any).Alatpay.setup(config);
