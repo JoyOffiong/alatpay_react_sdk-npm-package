@@ -4,7 +4,7 @@ This is a react library for implementing ALATPAY payment gateway into your web a
 
 # Installation
 
- ``npm install alatpay``
+ ``npm install react-alatpay``
 
 # Usage
   
@@ -47,6 +47,18 @@ This is a react library for implementing ALATPAY payment gateway into your web a
 
     export default Page
   ```
+
+ # Metadata field
+ 
+ The metadata field expects an array of objects and this will be returned in the response body
+
+ ```js
+    //other required fields
+    metadata:"[{referenceNumber:"1234231"},{state:"Lagos"},{country:"Nigeria"}]"
+ 
+ ```
+
+
 
  # Deployment
 
