@@ -17,7 +17,12 @@
     "url": "https://github.com/JoyOffiong/alatpay_react_sdk-npm-package.git"
   },
   "keywords": [
-    "react-sdk"
+    "react",
+    "javascript",
+    "sdk",
+    "open source",
+    "payment gateway",
+    "ALATPay"
   ],
   "author": "",
   "license": "ISC",
