@@ -54,7 +54,7 @@ This is a react library for implementing ALATPAY payment gateway into your web a
 
  ```js
     //other required fields
-    metadata:"[{referenceNumber:"1234231"},{state:"Lagos"},{country:"Nigeria"}]"
+    metadata:"[{referenceNumber:"1234231", state:"Lagos",country:"Nigeria"}]"
  
  ```
 

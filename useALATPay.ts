@@ -43,12 +43,8 @@ function UseALATPay({
         amount,
         currency,
         metadata,
-        onTransaction: function (response: any) {
-          return response
-      },
-      onClose: function () {
-        
-      },
+        onTransaction,
+        onClose
       };
     
       const newPopup = (window as any).Alatpay.setup(config);
