@@ -24,7 +24,6 @@ function UseALATPay({
         const existingScript = document.querySelector("script[src='https://web.alatpay.ng/js/alatpay.js']");
         if (existingScript) {
           existingScript.addEventListener("load", () => resolve());
-          existingScript.addEventListener("error", () => reject(new Error("Script failed to load")));
           return;
         }
   
