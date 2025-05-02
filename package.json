@@ -1,6 +1,6 @@
 {
   "name": "react-alatpay",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React-sdk for alatpay",
   "main": "dist/useALATPay.mjs",
   "types": "dist/useALATPay.d.ts",
@@ -30,7 +30,6 @@
     "react": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "alatpay": "file:",
     "react-alatpay": "file:"
   },
   "devDependencies": {
