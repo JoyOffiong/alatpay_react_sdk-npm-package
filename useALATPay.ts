@@ -17,21 +17,29 @@ type props= {
 function UseALATPay({
   amount, apiKey,businessId,currency,email,firstName,lastName,metadata, phone, onTransaction, onClose}:props) {
 
-    
-    const submit = (formData: any) => {
-      if (!(window as any).Alatpay) {
+    const loadScript = (): Promise<void> => {
+      return new Promise((resolve, reject) => {
+        if ((window as any).Alatpay) return resolve();
+  
+        const existingScript = document.querySelector("script[src='https://web.alatpay.ng/js/alatpay.js']");
+        if (existingScript) {
+          existingScript.addEventListener("load", () => resolve());
+          existingScript.addEventListener("error", () => reject(new Error("Script failed to load")));
+          return;
+        }
+  
         const script = document.createElement("script");
         script.src = "https://web.alatpay.ng/js/alatpay.js";
         script.async = true;
-    
-        script.onerror = () => {
-          console.error("Failed to load AlatPay script.");
-        };
-    
+  
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error("Failed to load AlatPay script"));
+  
         document.body.appendChild(script);
-         setTimeout(() => {  submit(formData) }, 1000);
-        return;
-      }
+      });
+    };
+    const submit = () =>  {
+      loadScript()
     
       const config = {
         apiKey,
@@ -43,8 +51,8 @@ function UseALATPay({
         amount,
         currency,
         metadata,
-        onTransaction,
-        onClose
+        onTransaction:(response:any)=>{console.log(response); onTransaction(response)},
+        onClose: ()=>{console.log('payment page closed'); onClose()}
       };
     
       const newPopup = (window as any).Alatpay.setup(config);
