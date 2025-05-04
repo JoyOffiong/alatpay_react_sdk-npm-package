@@ -50,7 +50,7 @@ This is a react library for implementing ALATPAY payment gateway into your web a
 
  # Metadata field
  
- The metadata field expects an array of objects and this will be returned in the response body
+ The metadata field is an objects that allows you to pass other required information
 
  ```js
     //other required fields
@@ -85,6 +85,6 @@ This is a react library for implementing ALATPAY payment gateway into your web a
     ``git checkout -b feature``
  3. Commit your changes: 
     ``git commit -m 'commit message'``
- 4. Push to your bank: 
+ 4. Push to your branch: 
      ``git push origin feature``
  5. Create a pull request
