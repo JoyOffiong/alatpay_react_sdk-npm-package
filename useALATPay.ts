@@ -50,8 +50,8 @@ function UseALATPay({
         amount,
         currency,
         metadata,
-        onTransaction:(response:any)=>{console.log(response); onTransaction(response)},
-        onClose: ()=>{console.log('payment page closed'); onClose()}
+        onTransaction,
+        onClose
       };
     
       const newPopup = (window as any).Alatpay.setup(config);

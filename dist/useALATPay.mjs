@@ -21,7 +21,7 @@ function UseALATPay({ amount, apiKey, businessId, currency, email, firstName, la
             amount,
             currency,
             metadata,
-            onTransaction: function (response) {
+            onTransaction: function () {
                 return response
             },
             onClose: function () {
