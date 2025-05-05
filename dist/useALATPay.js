@@ -1,16 +1,23 @@
 function UseALATPay({ amount, apiKey, businessId, currency, email, firstName, lastName, metadata, phone, onTransaction, onClose }) {
-    const submit = (formData) => {
-        if (!window.Alatpay) {
+    const loadScript = () => {
+        return new Promise((resolve, reject) => {
+            if (window.Alatpay)
+                return resolve();
+            const existingScript = document.querySelector("script[src='https://web.alatpay.ng/js/alatpay.js']");
+            if (existingScript) {
+                existingScript.addEventListener("load", () => resolve());
+                return;
+            }
             const script = document.createElement("script");
             script.src = "https://web.alatpay.ng/js/alatpay.js";
             script.async = true;
-            script.onerror = () => {
-                console.error("Failed to load AlatPay script.");
-            };
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error("Failed to load AlatPay script"));
             document.body.appendChild(script);
-            setTimeout(() => { submit(formData); }, 1000);
-            return;
-        }
+        });
+    };
+    const submit = () => {
+        loadScript();
         const config = {
             apiKey,
             businessId,
