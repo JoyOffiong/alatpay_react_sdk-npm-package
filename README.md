@@ -14,7 +14,7 @@ This is a react library for implementing ALATPAY payment gateway into your web a
 
 
   const submit=()=>{
-     config.submit(data)
+     config.submit()
     }
 
       const config= UseALATPay({
