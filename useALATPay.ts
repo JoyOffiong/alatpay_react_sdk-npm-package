@@ -50,7 +50,7 @@ function UseALATPay({
         amount,
         currency,
         metadata,
-        onTransaction:onTransaction,
+        onTransaction:(Response:any)=>onTransaction(Response),
         onClose:onClose
       };
     

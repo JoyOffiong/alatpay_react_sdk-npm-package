@@ -13,11 +13,7 @@ This is a react library for implementing ALATPAY payment gateway into your web a
   import UseALATPay from "alatpay"
 
 
-  const submit=()=>{
-     config.submit()
-    }
-
-      const config= UseALATPay({
+const config= UseALATPay({
       amount: 100,
       apiKey: "14feff9729184eb09e0385184efc1816", 
       businessId: "582418f7-032f-48ca-27c8-08dcd31fac98", 
@@ -25,7 +21,7 @@ This is a react library for implementing ALATPAY payment gateway into your web a
       email: "john.doe@gmail.com", 
       firstName:'John',
       lastName:'Doe', 
-      metadata:'',   
+      metadata:{},   
       phone:'09099912345',
       onClose: () => {
         console.log("Payment popup closed")},
@@ -34,13 +30,19 @@ This is a react library for implementing ALATPAY payment gateway into your web a
       },
     })
 
+  const submit=()=>{
+     config.submit()
+    }
+
+      
+
 
     Function Page(){
         <div>
         <p>Enter your Information</p>
-        <form>
+        <form >
         <input/>
-        <button type='submit'>Pay</button>
+        <button type='submit' onClick={()=>submit()}>Pay</button>
         </form>
         </div>
     }
