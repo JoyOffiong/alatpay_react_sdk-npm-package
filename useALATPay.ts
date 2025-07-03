@@ -53,7 +53,11 @@ function UseALATPay({
         amount,
         currency,
         metadata,
-        onTransaction:(Response:any)=>console.log(Response),
+       onTransaction: (response: any) => {
+  console.log("Transaction Response:", response); 
+  onTransaction(response);
+},
+
         onClose:onClose
       };
     

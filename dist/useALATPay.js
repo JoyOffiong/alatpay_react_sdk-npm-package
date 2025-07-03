@@ -30,7 +30,10 @@ function UseALATPay({ amount, apiKey, businessId, color, currency, email, firstN
             amount,
             currency,
             metadata,
-            onTransaction: (Response) => console.log(Response),
+            onTransaction: (response) => {
+                console.log("Transaction Response:", response);
+                onTransaction(response);
+            },
             onClose: onClose
         };
         const newPopup = window.Alatpay.setup(config);
