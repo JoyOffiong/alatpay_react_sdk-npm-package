@@ -36,11 +36,12 @@ function UseALATPay({
         script.onerror = () => reject(new Error("Failed to load AlatPay script"));
   
         document.body.appendChild(script);
+          console.log("Submit this")
       });
     };
     const submit = () =>  {
       loadScript()
-    console.log("Submit this")
+  
       const config = {
         apiKey,
         businessId,
