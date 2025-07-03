@@ -10,12 +10,13 @@ type props= {
   metadata: string 
   phone: string,
   onTransaction:any,
-  onClose: any
+  onClose: any,
+  color: string
  
 }
 
 function UseALATPay({
-  amount, apiKey,businessId,currency,email,firstName,lastName,metadata, phone, onTransaction, onClose}:props) {
+  amount, apiKey,businessId, color, currency,email,firstName,lastName,metadata, phone, onTransaction, onClose}:props) {
 
     const loadScript = (): Promise<void> => {
       return new Promise((resolve, reject) => {
@@ -45,12 +46,13 @@ function UseALATPay({
         businessId,
         email,
         phone,
+        color,
         firstName,
         lastName,
         amount,
         currency,
         metadata,
-        onTransaction:(Response:any)=>onTransaction(Response),
+        onTransaction:(Response:any)=>console.log(Response),
         onClose:onClose
       };
     

@@ -1,4 +1,4 @@
-function UseALATPay({ amount, apiKey, businessId, currency, email, firstName, lastName, metadata, phone, onTransaction, onClose }) {
+function UseALATPay({ amount, apiKey, businessId, color, currency, email, firstName, lastName, metadata, phone, onTransaction, onClose }) {
     const loadScript = () => {
         return new Promise((resolve, reject) => {
             if (window.Alatpay)
@@ -23,12 +23,13 @@ function UseALATPay({ amount, apiKey, businessId, currency, email, firstName, la
             businessId,
             email,
             phone,
+            color,
             firstName,
             lastName,
             amount,
             currency,
             metadata,
-            onTransaction: (Response) => onTransaction(Response),
+            onTransaction: (Response) => console.log(Response),
             onClose: onClose
         };
         const newPopup = window.Alatpay.setup(config);
