@@ -18,6 +18,7 @@ function UseALATPay({ amount, apiKey, businessId, color, currency, email, firstN
     };
     const submit = () => {
         loadScript();
+        console.log("Submit this");
         const config = {
             apiKey,
             businessId,

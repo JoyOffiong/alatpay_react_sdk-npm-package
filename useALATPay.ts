@@ -40,7 +40,7 @@ function UseALATPay({
     };
     const submit = () =>  {
       loadScript()
-    
+    console.log("Submit this")
       const config = {
         apiKey,
         businessId,
