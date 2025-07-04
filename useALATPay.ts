@@ -1,17 +1,17 @@
 
 type props= {
-  amount: number
-  apiKey: string 
-  businessId: string 
-  currency: string
-  email: string 
-  firstName: string 
-  lastName: string
-  metadata: string 
-  phone: string,
-  onTransaction:any,
-  onClose: any,
-  color: string
+  amount: number | undefined
+  apiKey: string  | undefined
+  businessId: string  | undefined
+  currency: string  | undefined
+  email: string  | undefined
+  firstName: string  | undefined
+  lastName: string  | undefined
+  metadata: string  | undefined
+  phone: string  | undefined
+  onTransaction:any  | undefined
+  onClose: any  | undefined
+  color: string  | undefined
  
 }
 
@@ -36,7 +36,6 @@ function UseALATPay({
         script.onerror = () => reject(new Error("Failed to load AlatPay script"));
   
         document.body.appendChild(script);
-          console.log("Submit this")
       });
     };
     const submit = () =>  {
@@ -54,7 +53,7 @@ function UseALATPay({
         currency,
         metadata,
        onTransaction: (response: any) => {
-  console.log("Transaction Response:", response); 
+  
   onTransaction(response);
 },
 

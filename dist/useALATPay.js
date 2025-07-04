@@ -14,7 +14,6 @@ function UseALATPay({ amount, apiKey, businessId, color, currency, email, firstN
             script.onload = () => resolve();
             script.onerror = () => reject(new Error("Failed to load AlatPay script"));
             document.body.appendChild(script);
-            console.log("Submit this");
         });
     };
     const submit = () => {
@@ -31,7 +30,6 @@ function UseALATPay({ amount, apiKey, businessId, color, currency, email, firstN
             currency,
             metadata,
             onTransaction: (response) => {
-                console.log("Transaction Response:", response);
                 onTransaction(response);
             },
             onClose: onClose

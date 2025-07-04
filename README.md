@@ -10,7 +10,7 @@ This is a react library for implementing ALATPAY payment gateway into your web a
   
   ```js
   import React from 'react' 
-  import UseALATPay from "alatpay"
+  import UseALATPay from "react-alatpay"
 
 
 const config= UseALATPay({
